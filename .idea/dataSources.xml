@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="order" uuid="3fbd3fc5-dd50-4a5f-9780-bd1d58d69000">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/order?useUnicode=true&amp;serverTimezone=UTC&amp;characterEncoding=utf-8</jdbc-url>
+    </data-source>
+  </component>
+</project>
