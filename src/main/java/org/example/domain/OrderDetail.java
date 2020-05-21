@@ -1,27 +1,39 @@
-package org.example;
+package org.example.domain;
 
 import javax.persistence.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private List<ProductDetail> productDetailList;
+
+    @OneToMany(mappedBy = "orderDetail", cascade = CascadeType.ALL)
+    private Set<ProductDetail> productDetailList =  new HashSet<>();
+
     @Column(nullable = false)
     private long total;
+
+    @ManyToOne
     private Customer customer;
 
-    public List<ProductDetail> getProductDetailList() {
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Set<ProductDetail> getProductDetailList() {
         return productDetailList;
     }
 
-    public OrderDetail(List<ProductDetail> productDetailList, Customer customer) {
+    public OrderDetail(Set<ProductDetail> productDetailList, Customer customer) {
         this.productDetailList = productDetailList;
+//        this.productDetailList.stream().forEach(productDetail -> productDetail.setOrderDetail(this));
+
         this.customer = customer;
 
         total = productDetailList.stream()
@@ -44,7 +56,7 @@ public class OrderDetail {
 
     }
 
-    public String getProductListRow(List<ProductDetail> productDetails) {
+    public String getProductListRow(Set<ProductDetail> productDetails) {
         //<tr><td>product name</td><td>price</td><tr>
         //<tr><td>product name</td><td>price</td><tr>
 //        StringBuilder builder = new StringBuilder();

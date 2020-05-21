@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/order?useUnicode=true&amp;serverTimezone=UTC&amp;characterEncoding=utf-8</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ordersys?useUnicode=true&amp;serverTimezone=UTC&amp;characterEncoding=utf-8</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password"></property>
@@ -16,6 +16,11 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!--mapping class-->
-        <mapping class="org.example.Product"/>
+        <mapping class="org.example.domain.Product"/>
+        <mapping class="org.example.domain.Customer"/>
+        <mapping class="org.example.domain.OrderDetail"/>
+        <mapping class="org.example.domain.ProductDetail"/>
+        <mapping class="org.example.domain.Person"/>
+        <mapping class="org.example.domain.Address"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,13 @@
+
+]
+java:S1128";Remove this unused import 'org.example.util.HibernateUtil'.(õô«ªüÿÿÿÿ8™·Ê³£.
+`
+java:S1128"CRemove this unused import 'javax.persistence.PersistenceException'.(µ¨¨8¸‡Ô³£.
+M
+java:S1068"+Remove this unused "session" private field.(ÔÂòáÿÿÿÿÿ8¸‡Ô³£.
+S
+java:S1128"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8Â½Ñ³£.
+
+java:S1130"€Remove the declaration of thrown exception 'org.example.service.CustomerService$CustomerException' which is a runtime exception.(„ñ¬8Ã‹à²£.
+
+java:S1130"€Remove the declaration of thrown exception 'org.example.service.CustomerService$CustomerException' which is a runtime exception.(œÂÅï8Ã‹à²£.

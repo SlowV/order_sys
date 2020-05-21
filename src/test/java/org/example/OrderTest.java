@@ -3,9 +3,15 @@ package org.example;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import org.example.domain.Customer;
+import org.example.domain.OrderDetail;
+import org.example.domain.Product;
+import org.example.domain.ProductDetail;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
@@ -14,10 +20,7 @@ public class OrderTest {
     @Test
     public void customerCanMakeOrder() {
         Customer customer = new Customer();
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
+        Set<ProductDetail> productDetailList = getProductDetails();
         OrderDetail orderDetail = customer.makeOrder(productDetailList);
         assertThat(orderDetail).isNotNull();
     }
@@ -25,21 +28,23 @@ public class OrderTest {
     @Test
     public void orderShouldContain2Products() {
         Customer customer = new Customer();
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
+        Set<ProductDetail> productDetailList = getProductDetails();
         OrderDetail orderDetail = customer.makeOrder(productDetailList);
         assertThat(orderDetail).isNotNull();
         assertThat(orderDetail.getProductDetailList().size()).isEqualTo(2);
     }
+
+    private Set<ProductDetail> getProductDetails() {
+        return Stream.of(
+                new ProductDetail(new Product(1l, "Laptop", 1000l), 2),
+                new ProductDetail(new Product(2l, "Tivi", 3000l), 3)
+        ).collect(Collectors.toSet());
+    }
+
     @Test
     public void orderShouldCalculateTheTotalProductInCart() {
         Customer customer = new Customer();
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
+        Set<ProductDetail> productDetailList = getProductDetails();
         OrderDetail orderDetail = customer.makeOrder(productDetailList);
         assertThat(orderDetail).isNotNull();
         assertThat(orderDetail.getProductDetailList().size()).isEqualTo(2);
@@ -49,11 +54,7 @@ public class OrderTest {
     @Test
     public void shouldGenerateHTML() throws IOException {
         Customer customer = new Customer();
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
-
+        Set<ProductDetail> productDetailList = getProductDetails();
         OutputStream out = new FileOutputStream(new File("./orderHTML.html"));
         customer.makeOrder(productDetailList).generate(out);
 
@@ -65,11 +66,7 @@ public class OrderTest {
     @Test
     public void fileShouldContainsProductInIt() throws IOException {
         Customer customer = new Customer();
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
-
+        Set<ProductDetail> productDetailList = getProductDetails();
         OutputStream out = new FileOutputStream(new File("./orderHTML.html"));
         customer.makeOrder(productDetailList).generate(out);
 
@@ -84,11 +81,8 @@ public class OrderTest {
 
     @Test
     public void fileShouldContainsTotal() throws IOException {
-        Customer customer = new Customer(1,"Ha");
-        List<ProductDetail> productDetailList = Arrays.asList(
-                new ProductDetail(new Product(1, "Laptop", 1000), 2),
-                new ProductDetail(new Product(2, "Tivi", 3000), 3)
-        );
+        Customer customer = new Customer(1l,"Ha");
+        Set<ProductDetail> productDetailList = getProductDetails();
 
         OutputStream out = new FileOutputStream(new File("./orderHTML.html"));
         customer.makeOrder(productDetailList).generate(out);

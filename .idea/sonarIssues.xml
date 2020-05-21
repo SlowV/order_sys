@@ -18,22 +18,7 @@
             <set />
           </value>
         </entry>
-        <entry key="D:/Project/SmartOSC/BeeNotBe/src/com/fintech/Main.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="D:/Project/hibernate/pom.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="D:/Project/hibernate/src/main/java/com/fintech/entity/Student.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="D:/Project/hibernate/src/main/resources/hibernate.cfg.xml">
+        <entry key="/fragment.java">
           <value>
             <set />
           </value>
@@ -88,7 +73,62 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/dao/CustomerDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/dao/OrderDetailDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/example/dao/ProductDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/Address.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/Customer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/OrderDetail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/Person.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/domain/ProductDetail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/service/CustomerDAOService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/service/CustomerService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java">
           <value>
             <set />
           </value>
@@ -128,7 +168,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/example/OrderServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/org/example/OrderTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/example/ProductServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Project/SmartOSC/BeeNotBe/src/com/fintech/Main.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Project/hibernate/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Project/hibernate/src/main/java/com/fintech/entity/Student.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Project/hibernate/src/main/resources/hibernate.cfg.xml">
           <value>
             <set />
           </value>
